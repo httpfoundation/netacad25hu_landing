@@ -24,7 +24,7 @@ const Sponsor = (props) => {
 const Sponsors = () => {
 	const [sponsorText] = useStaticElement("sponsor") 
 	return <Section container placeholder id="tamogatok">
-		<Title>Az IOK 2022 <span className="highlight">TÁMOGATÓI</span></Title>
+		<Title>Az IOK 2023 <span className="highlight">TÁMOGATÓI</span></Title>
 		<Text subtitle>
 			<Text description><StructuredText data={sponsorText}></StructuredText></Text>
 		</Text>

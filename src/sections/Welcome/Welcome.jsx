@@ -89,7 +89,7 @@ const Welcome = () => {
                     <Fade left delay={350}>
                         <img
                             src={WelcomeImageMobile}
-                            alt="IOK 2022"
+                            alt="IOK 2023"
                             className="welcome-image-mobile"
                         />
                     </Fade>

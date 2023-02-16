@@ -48,7 +48,7 @@ const Header = () => {
 		<div className="container">
 			<Fade top delay={900}>
 				<img src={BrandImg} alt="HTTP Alapítvány" className="brand-image" />
-				<h1>IOK 2022</h1>
+				<h1>IOK 2023</h1>
 				<Button href="#regisztracio"><Ticket />Regisztráció</Button>
 				<div className="hamburger-toggle" onClick={() => setMenuOpen(true)}>
 					<div className="bar"></div>

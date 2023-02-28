@@ -1,7 +1,14 @@
 @import '../../theme.scss';
 #regisztracio {
+	h2.title {
+		color: $iok-light;
+	}
+	.text {
+		color: $iok-light;
+	}
 	h3 {
 		text-align: center;
+		color: $iok-light;
 	}
 	p.subtitle{
 		margin-bottom: 0;
@@ -14,12 +21,12 @@
 		}
 	}
 	.form-label, .form-check-label {
-		color: #4F4F4F;
+		color: $iok-light;
 		font-size: 0.90rem;
 		font-weight: 600;		
 	}
 	p {
-		color: #4F4F4F;
+		color: $iok-light;
 		font-size: 0.90rem;
 	}
 	.form-check-input:checked {

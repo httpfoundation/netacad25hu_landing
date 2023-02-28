@@ -152,7 +152,7 @@ const Registration = (props) => {
 			<div className="form-check mb-4 mt-4">
 				<input className="form-check-input" type="checkbox" id="toc-field" required />
 				<label className="form-check-label" htmlFor="toc-field">
-					Elolvastam és elfogadom az <a href="/adatkezelesi_tajekoztato_IOK2023.pdf" target="_blank" className="link">Adatkezelési Tájékoztató</a>ban foglaltakat.*
+					Elolvastam és elfogadom az <a href="https://www.datocms-assets.com/94181/1676993398-adatkezelesi_tajekoztato_iok2023.pdf" target="_blank" className="link">Adatkezelési Tájékoztató</a>ban foglaltakat.*
 				</label>
 			</div>			
 			<div className="my-4"/>

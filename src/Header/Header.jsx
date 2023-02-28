@@ -1,5 +1,6 @@
 import './Header.scss'
-import BrandImg from '../assets/img/http-logo.png' 
+import BrandImg from '../assets/img/http-iok-logo.png' 
+import BrandImgSmall from '../assets/img/http-iok-logo-small.png' 
 import Button from '../components/Button/Button'
 import Ticket from '../icons/Ticket'
 import useScrollPosition from '@react-hook/window-scroll'
@@ -47,8 +48,9 @@ const Header = () => {
 	return <header className={`${scrollY < limit ? 'transparent' : ''}`}>
 		<div className="container">
 			<Fade top delay={900}>
+				{/* <img src={BrandImgSmall} alt="HTTP Alapítvány" className="brand-image brand-image-small" /> */}
 				<img src={BrandImg} alt="HTTP Alapítvány" className="brand-image" />
-				<h1>IOK 2023</h1>
+				<h1></h1> 
 				<Button href="#regisztracio"><Ticket />Regisztráció</Button>
 				<div className="hamburger-toggle" onClick={() => setMenuOpen(true)}>
 					<div className="bar"></div>

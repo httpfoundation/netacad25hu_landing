@@ -34,7 +34,7 @@ const Overlay = () => {
 					<div className='infobox'>
 						<Coffee />
 						<div>
-							<div className='title'>150</div>
+							<div className='title'>200</div>
 							<div className='subtitle'>helyszíni férőhely</div>
 						</div>
 					</div>

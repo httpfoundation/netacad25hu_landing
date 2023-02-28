@@ -2,7 +2,7 @@
 
 .button {
 	background-color: $primary;
-	color: $light;
+	color: $dark;
 	border: 0;
 	height: 45px;
 	border-radius: 22.5px;
@@ -18,7 +18,7 @@
 	display: inline-block;
 	
 	svg {
-		fill: $light;
+		fill: $dark;
 		height: 15px;
 		margin-right: 10px;
 		transform: translateY(-1px);
@@ -27,8 +27,12 @@
 	&:hover {
 		transform: translateY(-2px);
 		box-shadow: 0 3px 7px 0px rgb(0 0 0 / 20%);
-		background-color: adjust-color($color: $primary, $lightness: -10%);
+		/* background-color: adjust-color($color: $iok-lightblue, $lightness: 10%); */
+		background-color: $iok-lightblue;
 		color: $light;
+		svg {
+			fill: $light;
+		}
 	}
 
 	&:active {

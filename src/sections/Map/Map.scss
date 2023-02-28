@@ -1,4 +1,12 @@
+@import '../../theme.scss';
+
 #helyszin {
+	h2.title {
+		color: $iok-light;
+	}
+	.text {
+		color: $iok-light;
+	}
 	text-align: center;
 	padding: 80px 0;
 	img.map {

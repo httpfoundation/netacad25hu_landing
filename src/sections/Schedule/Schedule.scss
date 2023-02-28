@@ -162,7 +162,7 @@
 			
 		}
 		.separator-text {
-			color: $primary;
+			color: $iok-light;
 			border: 2px solid $primary;
 			height: 45px;
 			border-radius: 22.5px;
@@ -177,7 +177,7 @@
 			top: 50%;
 			transform: translate(-50%, -50%);
 			svg {
-				fill: $primary;
+				fill: $iok-light;
 				height: 15px;
 				margin-right: 10px;
 				transform: translateY(-1px);
@@ -188,7 +188,7 @@
 	.tabs-container {
 		width: 95%;
 		padding: 40px 40px;
-		border: 5px solid $light;
+		border: 5px solid $primary;
 		border-radius: 15px;
 		margin: auto;
 		background-color: rgba(255, 255, 255, 0.2);

@@ -6,7 +6,10 @@ section.section {
 		margin: auto;
 	}
 	&:nth-of-type(even) {
-		background-color: $bg-primary;
+		background-color: $iok-lightgrey;
+	}
+	&:nth-of-type(odd) {
+		background-color: $bg-secondary;
 	}
 	padding: 140px 0;
 	@include mobile {

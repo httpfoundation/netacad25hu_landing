@@ -1,3 +1,19 @@
+$primary: #f9a870;
+$light: #fff;
+$dark: #003b52;
+$grey: #4F4F4F;
+$lightgrey: #BDBDBD;
+$bg-light: #fff;
+$bg-primary: #f9a870;
+$bg-secondary: #003b52;
+$h1-color: #47BED0;
+$iok-lightblue: #47BED0;
+$iok-light: #d6f4f5;
+$iok-lightgrey: #fde9d1;
+
+/* 
+$bg-primary: #003b52;
+1c3664
 $primary: #47CCD4;
 $light: #fff;
 $dark: #000;
@@ -5,7 +21,7 @@ $grey: #4F4F4F;
 $lightgrey: #BDBDBD;
 $bg-light: #fff;
 $bg-primary: #D6F4F5;
-
+ */
 $mobile-breakpoint: 762px;
 
 @mixin mobile {

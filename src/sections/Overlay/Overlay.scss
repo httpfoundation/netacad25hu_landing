@@ -4,6 +4,7 @@
 	position: relative;
 	padding: 0 0;
 	margin-top: 100px;
+	background-color: $bg-secondary;
 	@include mobile {
 		margin-top: 0;
 	}
@@ -16,11 +17,11 @@
 		z-index: -2;
 		&.bg-1 {
 			top: 0;
-			background-color: $bg-light;
+			background-color: $bg-primary;
 		}
 		&.bg-2 {
 			bottom: 0;
-			background-color: $bg-primary;
+			background-color: $iok-lightgrey;
 		}
 	}
 

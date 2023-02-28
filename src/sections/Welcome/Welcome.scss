@@ -1,13 +1,14 @@
 @import '../../theme.scss';
 
 #welcome {
-	padding: 60px 0;
+	
+	padding: 90px 0 160px 0;
 	@include mobile {
 		padding-top: 0;
 	}
 	.welcome-image {
 		position: absolute;
-		top: 0;
+		top: 90px;
 		right: 0;
 		max-width: 46%;
 		max-height: 800px;
@@ -37,6 +38,7 @@
 		font-weight: 700;
 		font-size: 2.7rem;
 		line-height: 1.5;
+		color: $light;
 		.highlight {
 			color: $primary;
 		}
@@ -46,7 +48,7 @@
 		}
 	}
 	p {
-		color: $grey;
+		color: $light;
 		font-size: 0.9rem;
 		line-height: 1.8;
 		margin: 10px 0 30px 0;
@@ -64,10 +66,10 @@
 		display: inline-block;
 		font-size: 0.85rem;
 		font-weight: 600;
-		color: rgba(0, 0, 0, 0.7);
+		color: $light;
 		margin-right: 20px;
 		svg {
-			fill: rgba(0, 0, 0, 0.7);
+			fill: $primary;
 			height: 15px;
 			transform: translateY(-2.5px);
 			margin-right: 8px;

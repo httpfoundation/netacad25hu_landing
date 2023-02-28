@@ -45,7 +45,7 @@ export const useAllElements = (model) => {
 
     const modelQuery = {
         presenters: `
-            allSpeakers(orderBy: [name_ASC], first: ${dataCount?.count ?? 0} ) 
+            allSpeakers( first: ${dataCount?.count ?? 0} ) 
                 {
                     name
                     slug

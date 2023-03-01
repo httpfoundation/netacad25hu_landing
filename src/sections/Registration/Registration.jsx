@@ -49,14 +49,14 @@ const Registration = (props) => {
 		const client = new SiteClient(context.apiKey)
 		try {
 			await client.items.create({
-				itemType: '1843571',
+				itemType: '94458',
 				name,
 				email,
 				workplace,
 				phone,
 				city,
 				newsletter,
-				onsite: false,
+				onsite,
 				stage: stage || null,
 				vipCode: vipCode || null
 			})
@@ -124,7 +124,7 @@ const Registration = (props) => {
 			<label className="form-label" htmlFor="city-field">Település*</label>
 			<input id="city-field" className="form-control" value={city} onChange={e => setCity(e.target.value)} autoComplete="address-level2" required/>
 
-			{/* <label className="form-label">Jelentkezés személyes részvételre</label>
+			<label className="form-label">Jelentkezés személyes részvételre</label>
 			<div className="" style={{padding: '0.8rem', border: '1px solid #ced4da', borderRadius: '0.25rem'}}>
 				<StructuredText data={vipCode ? registrationFormatVipText : registrationFormatText} />
 				<div className="form-check">
@@ -142,7 +142,7 @@ const Registration = (props) => {
 						</select>
 					</>
 				}
-			</div> */}
+			</div>
 			<div className="form-check mb-4 mt-4">
 				<input className="form-check-input" type="checkbox" name="newsletter" id="newsletter-field" checked={newsletter} onChange={e => setNewsletter(e.target.checked)}/>
 				<label className="form-check-label" htmlFor="newsletter-field">
@@ -152,7 +152,7 @@ const Registration = (props) => {
 			<div className="form-check mb-4 mt-4">
 				<input className="form-check-input" type="checkbox" id="toc-field" required />
 				<label className="form-check-label" htmlFor="toc-field">
-					Elolvastam és elfogadom az <a href="https://www.datocms-assets.com/94181/1676993398-adatkezelesi_tajekoztato_iok2023.pdf" target="_blank" className="link">Adatkezelési Tájékoztató</a>ban foglaltakat.*
+					Elolvastam és elfogadom az <a href="https://www.datocms-assets.com/94181/1676993398-adatkezelesi_tajekoztato_iok2023.pdf" target="_blank" className="link" rel="noreferrer">Adatkezelési Tájékoztató</a>ban foglaltakat.*
 				</label>
 			</div>			
 			<div className="my-4"/>

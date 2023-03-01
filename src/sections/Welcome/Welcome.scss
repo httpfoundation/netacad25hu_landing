@@ -3,9 +3,6 @@
 #welcome {
 	
 	padding: 90px 0 160px 0;
-	@include mobile {
-		padding-top: 0;
-	}
 	.welcome-image {
 		position: absolute;
 		top: 90px;

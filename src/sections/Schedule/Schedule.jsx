@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import Section from "../../components/Section/Section";
 import Text from "../../components/Text/Text";
 import Title from "../../components/Title/Title";
@@ -121,7 +121,7 @@ const BreakoutSessionsSchedule = (props) => {
 	
 	let resizeObserver;
 
-    const selectTab = (index) => {
+    const selectTab = useCallback((index) => {
 		setSelectedStageIndex(index)
         const target = tabButtonRefs.current[index];
 		if (!(target)) return null
@@ -152,6 +152,7 @@ const BreakoutSessionsSchedule = (props) => {
                 )[0].style.height =
                     sessions.getBoundingClientRect().height + "px";
                 if (resizeObserver) resizeObserver.disconnect();
+                // eslint-disable-next-line react-hooks/exhaustive-deps
                 resizeObserver = new ResizeObserver((entries) => {
                     document.getElementsByClassName(
                         "sessions-container"
@@ -169,11 +170,21 @@ const BreakoutSessionsSchedule = (props) => {
 
             return null;
         });
-    };
+    }, [])
 
     useEffect(() => {
         selectTab(0)
     }, [])
+
+    useEffect(() => {
+        const onResize = () => {
+            selectTab(selectedStageIndex)
+        }
+
+        window.addEventListener("resize", onResize)
+
+        return () => window.removeEventListener("resize", onResize)
+    }, [selectedStageIndex, selectTab])
 
     return (
         <div className="tabs-container">

@@ -13,7 +13,9 @@ const Map = () => {
 	return <Section id="helyszin" container placeholder>
 		<Title>Konferencia <span className="highlight">HELYSZÍN</span></Title>
 		<Text description><StructuredText data={mapText1}></StructuredText></Text>
-		<img className="map" src={map} alt="Térkép" />
+		<a href="https://goo.gl/maps/ADFz3t7ywGATAbNh7" target="_blank" rel="noreferrer">
+			<img className="map" src={map} alt="Térkép" />
+		</a>
 		<Text description><StructuredText data={mapText2}></StructuredText></Text>
 	</Section>
 }

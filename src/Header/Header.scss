@@ -39,7 +39,8 @@ header {
 		display: block;
 	}
 	&:not(.transparent) {
-		background-color: $bg-secondary;
+		background-color: rgba($bg-secondary, 0.85);
+		backdrop-filter: blur(10px);
 		box-shadow: 0px 10px 40px #001922;;
 		padding: 10px 0;
 		@include desktop {

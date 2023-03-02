@@ -17,6 +17,10 @@ const Footer = () => {
 					<Mail /><div><a href="mailto:info@http-alapitvany.hu">info@http-alapitvany.hu</a></div>
 					<Web /><div><a target="_blank" rel="noopener noreferrer" href="https://http-alapitvany.hu">http-alapitvany.hu</a></div>
 				</div>
+				<div className="copy">
+					&copy; HTTP Alapítvány<br />
+					Minden jog fenntartva
+				</div>
 
 
 			</div>
@@ -30,9 +34,11 @@ const Footer = () => {
 						Cisco Hálózati Akadémia<br />
 						<Web /> <a target="_blank" rel="noopener noreferrer" href="https://netacad.hu">netacad.hu</a>
 					</div>
+					<div style={{marginBottom:"1rem"}}>
+						Skills IT<br />
+						<Web /> <a target="_blank" rel="noopener noreferrer" href="https://skillsit.hu">skillsit.hu</a>
+					</div>
 				</div>
-				&copy; HTTP Alapítvány<br />
-				Minden jog fenntartva
 				</div>
 
 		</div>

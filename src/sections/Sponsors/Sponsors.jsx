@@ -3,6 +3,7 @@ import Text from "../../components/Text/Text"
 import Title from "../../components/Title/Title"
 import './Sponsors.scss'
 import telekomLogo from "../../assets/img/sponsors/Telekom.png"
+import alizLogo from "../../assets/img/sponsors/aliz.png"
 import microsoftLogo from "../../assets/img/sponsors/ms-logo_HU.png"
 import ciscoLogo from "../../assets/img/sponsors/cisco2.png"
 import pannonLogo from "../../assets/img/sponsors/pannon-mik2.png"
@@ -35,12 +36,15 @@ const Sponsors = () => {
 		</div>
 		<h3>Együttműködő partnerek</h3>
 		<div className="sponsor-grid partner-sponsors">
+			<Sponsor image={netAcadLogo} className="elte-tok" link="https://netacad.com/" />
 			<Sponsor image={ciscoLogo} link="http://cisco.hu" />
 			<Sponsor image={pannonLogo} link="https://mik.uni-pannon.hu/" />
 			<Sponsor image={eltetokLogo} className="elte-tok" link="https://www.tok.elte.hu/" />
-			<Sponsor image={netAcadLogo} className="elte-tok" link="https://netacad.com/" />
-			
 		</div>
+		<h3>Az InfoTanár Mentor Program fő támogatója</h3>
+		<div className="sponsor-grid itmp-sponsors">
+			<Sponsor image={alizLogo} className="" link="https://aliz.ai/" />
+		</div>		
 	</Section>
 }
 

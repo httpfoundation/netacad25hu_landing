@@ -4,7 +4,7 @@
 	position: relative;
 	padding: 0 0;
 	margin-top: 100px;
-	background-color: $bg-secondary;
+	/* background-color: $bg-secondary; */
 	@include mobile {
 		margin-top: 0;
 	}
@@ -82,5 +82,8 @@
 				}
 			}
 		}
+	}
+	@include mobile {
+		margin-top: 50px
 	}
 }

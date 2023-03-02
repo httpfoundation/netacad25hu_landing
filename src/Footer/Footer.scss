@@ -51,12 +51,18 @@ footer {
 	.copyright {
 		color: $grey;
 		font-size: 0.8rem;
-		@include mobile { 
-			text-align: center;
-		}
 	}
 	.http {
 		filter: invert(0.6);
 		height: 50px;
+	}
+	.copy {
+		margin-top: 10px;
+	}
+	@include mobile {
+		padding: 40px 20px;
+		.copyright {
+			margin-top: 20px;
+		}
 	}
 }

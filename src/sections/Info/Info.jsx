@@ -28,7 +28,7 @@ const Info = () => {
 					</div>
 				</div>
 				<div className='col-md-6 col-12'>
-					<Title subtitle>Töltődj fel a legfrisebb információkkal!</Title>
+					<Title subtitle>Töltődj fel a legfrissebb információkkal!</Title>
 					<Text>
 						<StructuredText data={infoText2}/>
 					</Text>

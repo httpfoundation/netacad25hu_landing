@@ -4,7 +4,7 @@ import Text from "../../components/Text/Text"
 import Title from "../../components/Title/Title"
 import './Registration.scss'
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { StructuredText } from "react-datocms"
 import { SiteClient } from "datocms-client"
 import { AppContext } from "../../App"
@@ -39,7 +39,16 @@ const Registration = (props) => {
 	const [success, setSuccess] = useState(false)
 	const [error, setError] = useState(false)
 
-	const vipCode = (new URLSearchParams(window.location.search)).get('q') || null
+	const vipCodeBase64 = (new URLSearchParams(window.location.search)).get('q') || null
+	const vipCodeArray = vipCodeBase64 ? atob(vipCodeBase64).split("#") : []
+	const vipEmail = vipCodeArray.length>0 ? vipCodeArray[0] : null
+	const vipCode = vipCodeArray.length>1 ? vipCodeArray[1] : null
+
+	useEffect(() => {
+		if (vipCode) {
+			setEmail(vipEmail)
+		}
+	}, [vipCode, vipEmail])
 
 	const onSubmit = async (e) => {
 		e.preventDefault()

@@ -95,8 +95,8 @@ const Welcome = () => {
                     </Fade>
                     <Fade top delay={400}>
                         <h1>
-                            Informatikai Oktatási Konferencia{" "}
-                            <span className="highlight">2023</span>
+                            NetAcad 25{" "}
+                            <span className="highlight">születésnapi ünnepség</span>
                         </h1>
                     </Fade>
                     <Fade top delay={440}>

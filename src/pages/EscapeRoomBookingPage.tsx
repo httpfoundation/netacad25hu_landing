@@ -9,12 +9,13 @@ import {useBookingMutation} from "../hooks/useBookingMutation";
 import {BookingInfo} from "../components/BookingInfo";
 
 export const EscapeRoomBookingPage = () => {
+    console.log("EscapeRoomBookingPage")
     const {data: bookings, status, error} = useEscapeRoomBookings();
     const regId = useRegId();
     const registration = useMe(regId);
     const updateBooking = useBookingMutation(registration?.dato_token??'');
     const [loading, setLoading] = useState(false);
-
+    
     if(!regId){
         return <h1>Az url-ben szerepelnie kell a regisztrációs tokennek</h1>
     }

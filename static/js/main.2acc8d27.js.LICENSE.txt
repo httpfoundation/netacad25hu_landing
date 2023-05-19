@@ -5,6 +5,12 @@ object-assign
 */
 
 /*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+
+/*!
        * Pusher JavaScript Library v5.1.1
        * https://pusher.com/
        *
@@ -54,13 +60,9 @@ object-assign
      * Released under the MIT License.
      */
 
-/*!
-  Copyright (c) 2018 Jed Watson.
-  Licensed under the MIT License (MIT), see
-  http://jedwatson.github.io/classnames
-*/
-
 /*! https://mths.be/punycode v1.4.1 by @mathias */
+
+/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
 
 /**
  * @mui/styled-engine v5.12.3

@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.05c27fa6.css",
-    "main.js": "/static/js/main.2acc8d27.js",
+    "main.css": "/static/css/main.97cdfa76.css",
+    "main.js": "/static/js/main.a79fcdae.js",
     "static/media/map.png": "/static/media/map.d19709e40e95c55db50c.png",
-    "static/media/welcome-img.png": "/static/media/welcome-img.2281f89b2d318a4342f9.png",
     "static/media/welcome-img-mobile.png": "/static/media/welcome-img-mobile.5e277ddea7ec39c3e6a4.png",
+    "static/media/welcome-img.png": "/static/media/welcome-img.e4bd278a610af65126bf.png",
+    "static/media/Cisco-Networking-Academy-Logo-WH.png": "/static/media/Cisco-Networking-Academy-Logo-WH.c45b53b35143f7b08e9d.png",
     "static/media/aliz.png": "/static/media/aliz.0f37e27e7eff98a948c5.png",
     "static/media/netacad2.png": "/static/media/netacad2.ddb48cec1704a4c173bd.png",
     "static/media/Telekom.png": "/static/media/Telekom.d9c3e28cb74a9266220f.png",
     "static/media/pannon-mik2.png": "/static/media/pannon-mik2.3544fe72a4bcfee7df2e.png",
     "index.html": "/index.html",
-    "main.05c27fa6.css.map": "/static/css/main.05c27fa6.css.map",
-    "main.2acc8d27.js.map": "/static/js/main.2acc8d27.js.map"
+    "main.97cdfa76.css.map": "/static/css/main.97cdfa76.css.map",
+    "main.a79fcdae.js.map": "/static/js/main.a79fcdae.js.map"
   },
   "entrypoints": [
-    "static/css/main.05c27fa6.css",
-    "static/js/main.2acc8d27.js"
+    "static/css/main.97cdfa76.css",
+    "static/js/main.a79fcdae.js"
   ]
 }

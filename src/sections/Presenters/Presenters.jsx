@@ -59,7 +59,7 @@ const AllPresenters = (props) => {
 	return	(
 		<div className="presenters-grid small">
 		{
-			presenters?.map((presenter, index) => (
+			presenters?.filter(presenter => presenter.image).map((presenter, index) => (
 				<Presenter
 					key={presenter.slug}
 					right={index % 2 === 1}
@@ -79,20 +79,27 @@ const Presenters = (props) => {
 	const [presenterText] = useStaticElement("speaker") 
 	const [allPresenters] = useAllElements("presenters")
 	const [showAll, setShowAll] = useState(false)
+	const highlightedPresenters = allPresenters?.filter(s => s.highlighted)
+	const furtherPresenters = allPresenters?.filter(s => !s.highlighted && s.image)
+
 
     return (
         <Section id="eloadok" container placeholder>
 			<Title>
-				<span className="highlight text-uppercase">Előadóink</span>
+				<span className="text-uppercase">Előadóink</span>
 			</Title>
 			<Text subtitle>
 				<StructuredText data={presenterText} />
 			</Text>
             
 			
-			{(allPresenters) && <HighlightedPresenters presenters={allPresenters.filter(s => s.highlighted)} />}
-			<Button onClick={() => setShowAll(!showAll)}><Arrow rotation={showAll ? 180 : 0} /> További előadóink </Button>
-			{(allPresenters && showAll) && <AllPresenters presenters={allPresenters.filter(s => !s.highlighted)} />}
+			{(allPresenters) && <HighlightedPresenters presenters={highlightedPresenters} />}
+			{furtherPresenters?.length > 0 && 
+				<>
+					<Button onClick={() => setShowAll(!showAll)}><Arrow rotation={showAll ? 180 : 0} /> További előadóink </Button>
+					{(allPresenters && showAll) && <AllPresenters presenters={furtherPresenters} />}
+				</>
+			}
 			
         </Section>
     );

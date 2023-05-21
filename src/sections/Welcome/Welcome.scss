@@ -45,7 +45,7 @@
 		}
 	}
 	p {
-		color: $light;
+		color: $primary;
 		font-size: 0.9rem;
 		line-height: 1.8;
 		margin: 10px 0 30px 0;
@@ -65,6 +65,21 @@
 			margin-top: -10px;
 		}
 	}
+	.title {
+		color: $primary;
+	}
+	.title1 {
+		font-size: 1.3rem;
+		font-weight: 700;
+	}
+	.title2 {
+		font-size: 2rem;
+		font-weight: 300;
+	}
+	.title3 {
+		font-size: 3rem;
+		font-weight: 300;
+	}
 }
 
 .overview {
@@ -72,7 +87,7 @@
 		display: inline-block;
 		font-size: 0.85rem;
 		font-weight: 600;
-		color: $light;
+		color: $primary;
 		margin-right: 20px;
 		svg {
 			fill: $primary;

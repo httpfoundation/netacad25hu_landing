@@ -76,6 +76,7 @@ export const useAllElements = (model) => {
                             url
                         }
                     }
+                    break
                 }
             }        
         `,

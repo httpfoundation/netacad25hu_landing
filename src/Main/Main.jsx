@@ -13,7 +13,7 @@ const Main = () => {
 	return (
 		<main>
 			<Welcome />
-			<Overlay />
+			{/* <Overlay /> */}
 			<RegistrationFeedback />
 			<Info />
 			<Presenters />

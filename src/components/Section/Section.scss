@@ -6,7 +6,7 @@ section.section {
 		margin: auto;
 	}
 	&:nth-of-type(even) {
-		background-color: $iok-lightgrey;
+		background-color: $bg-primary;
 	}
 	&:nth-of-type(odd) {
 		background-color: $bg-secondary;

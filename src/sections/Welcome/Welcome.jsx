@@ -48,7 +48,7 @@ const calculateCountdown = (target) => {
 };
 
 const Welcome = () => {
-    const target = useMemo(() => new Date("2023-03-18T09:00:00"), []);
+    const target = useMemo(() => new Date("2023-06-08T09:00:00"), []);
     const [countdown, setCountdown] = useState({});
 	const [welcomeText] = useStaticElement("welcome")
     useEffect(() => {
@@ -64,7 +64,7 @@ const Welcome = () => {
         <Section container placeholder id="welcome">
             <div className="row">
                 <div className="col-md-7 col-12">
-                    <div className="bubbles">
+{/*                     <div className="bubbles">
                         <Fade left delay={200}>
                             <Bubble
                                 title={countdown.days}
@@ -83,7 +83,7 @@ const Welcome = () => {
                             />
                         </Fade>
                     </div>
-                    <Fade top delay={300}>
+ */}                    <Fade top delay={300}>
                         <Overview date={target} />
                     </Fade>
                     <Fade left delay={350}>
@@ -94,10 +94,11 @@ const Welcome = () => {
                         />
                     </Fade>
                     <Fade top delay={400}>
-                        <h1>
-                            NetAcad 25{" "}
-                            <span className="highlight">születésnapi ünnepség</span>
-                        </h1>
+                        <>
+                            <span className="title title1">25 éves</span><br />
+                            <span className="title title2">a Cisco Hálózati Akadémia Magyarországon</span><br />
+                            <span className="title title3">2023</span><br />
+                        </>
                     </Fade>
                     <Fade top delay={440}>
                         <StructuredText data={welcomeText} />

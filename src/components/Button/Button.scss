@@ -2,7 +2,7 @@
 
 .button {
 	background-color: $primary;
-	color: $dark;
+	color: $secondary;
 	border: 0;
 	height: 45px;
 	border-radius: 22.5px;
@@ -18,7 +18,7 @@
 	display: inline-block;
 	
 	svg {
-		fill: $dark;
+		fill: $secondary;
 		height: 15px;
 		margin-right: 10px;
 		transform: translateY(-1px);

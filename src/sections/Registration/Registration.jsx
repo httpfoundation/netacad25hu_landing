@@ -110,7 +110,7 @@ const Registration = (props) => {
 	}
 
 	return <Section id="regisztracio" container placeholder>
-		<Title>Biztosítsd már most a <span className="highlight text-uppercase">helyed</span>!</Title>
+		<Title>Biztosítsd már most a <span className="text-uppercase">helyed</span>!</Title>
 		<Text subtitle>
 			<StructuredText data={registrationText2} />
 		</Text>

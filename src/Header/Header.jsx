@@ -1,5 +1,5 @@
 import './Header.scss'
-import BrandImg from '../assets/img/http-iok-logo.png' 
+import BrandImg from '../assets/img/Cisco-Networking-Academy-Logo-WH.png' 
 import BrandImgSmall from '../assets/img/http-iok-logo-small.png' 
 import Button from '../components/Button/Button'
 import Ticket from '../icons/Ticket'

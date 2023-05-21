@@ -44,11 +44,11 @@
 			transition: all 0.2s ease-out;
 			font-size: 0.75rem;
 			font-weight: 600;
-			color: rgba(0, 0, 0, 0.5);
+			color: $lightgrey;
 			padding-top: 5px;
 			svg {
 				transition: all 0.2s ease-out;
-				fill: rgba(0, 0, 0, 0.5);
+				fill: $lightgrey;
 				height: 15px;
 				transform: translateY(-2.5px);
 				margin-right: 8px;
@@ -72,7 +72,7 @@
 			transition: all 0.2s ease-out;
 			font-size: 0.75rem;
 			font-weight: 500;
-			color: rgba(0, 0, 0, 0.5);
+			color: $lightgrey;
 		}
 
 		.description {
@@ -90,7 +90,7 @@
 		}
 
 		&:hover {
-			background-color: rgba(255, 255, 255, 0.6);
+			background-color: rgba(255, 255, 255, 0.1);
 		}
 		
 		&.open {

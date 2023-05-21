@@ -11,7 +11,7 @@ header {
 	padding: 15px 0;
 	z-index: 100;
 	transition: all 0.2s ease-out;
-	background-color: $bg-secondary;
+	background-color: rgba($bg-primary, 0.85);
 
 	&>div.container {
 		display: flex;
@@ -39,7 +39,7 @@ header {
 		display: block;
 	}
 	&:not(.transparent) {
-		background-color: rgba($bg-secondary, 0.85);
+		background-color: rgba($bg-primary, 0.75);
 		backdrop-filter: blur(10px);
 		box-shadow: 0px 10px 40px #001922;;
 		padding: 10px 0;

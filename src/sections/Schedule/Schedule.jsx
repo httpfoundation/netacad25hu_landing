@@ -28,6 +28,8 @@ const PreseterImages = (props) => {
 
 const ScheduleItem = (props) => {
     const double = props.presenters?.length > 1;
+    console.log("presenters", props.presenters)
+    
     return (
         <div
             className={`shcedule-item ${props.open ? "open" : ""} ${
@@ -35,8 +37,9 @@ const ScheduleItem = (props) => {
             }`}
             onClick={props.onClick}
         >
+
             <div className="images">
-                {props.presenters?.map((presenter, index) => (
+                {props.presenters?.map((presenter, index) => presenter && presenter.image && (
                     <div
                         key={presenter.id}
                         className="image"
@@ -82,9 +85,9 @@ const Separator = (props) => {
 
 const PlenarySessionSchedule = (props) => {
     const { schedule, openedScheduleItem, setOpenedScheduleItem } = props;
-
+    console.log("schedule", schedule)
     return schedule.map((presentation, index) => {
-        if (presentation.speaker[0])
+        if (!(presentation.break))
             return (
                 <ScheduleItem
                     title={presentation.title}
@@ -257,11 +260,13 @@ const Schedule = (props) => {
     const [allStages] = useAllElements("stages")
     const [openedScheduleItem, setOpenedScheduleItem] = useState(null);
     const [scheduleText] = useStaticElement("talk") 
-    
+    const breakoutSessionStages = allStages?.slice(1)
+    const plenary = allStages ? allStages[0].schedule : null
+    plenary?.sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime())
     return (
         <Section container placeholder id="program">
             <Title>
-                Konferencia <span className="highlight">PROGRAM</span>
+                Az ünnepi <span className="highlight">PROGRAM</span>
             </Title>
             <Text subtitle>
                 <StructuredText data={scheduleText}/>
@@ -274,11 +279,11 @@ const Schedule = (props) => {
 						setOpenedScheduleItem={setOpenedScheduleItem}
 					/>
 				
-					<BreakoutSessionsSchedule
-						breakoutSessionStages={allStages?.slice(1)}
+                    {breakoutSessionStages.length>0 && <BreakoutSessionsSchedule
+						breakoutSessionStages={breakoutSessionStages}
 						openedScheduleItem={openedScheduleItem}
 						setOpenedScheduleItem={setOpenedScheduleItem}
-					/>
+					/>}
 				</>
 			)}
         </Section>

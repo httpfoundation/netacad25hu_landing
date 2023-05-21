@@ -11,7 +11,7 @@ footer {
 	}
 	.links {
 		flex: 1;
-		color: $grey;
+		color: $lightgrey;
 		font-weight: 500;
 		font-size: 0.8rem;
 
@@ -31,7 +31,7 @@ footer {
 		}
 
 		svg {
-			fill: $grey;
+			fill: $lightgrey;
 			transform: translateY(-2px);
 			width: 16px;
 		}
@@ -40,7 +40,7 @@ footer {
 			@include mobile {
 			}
 			text-decoration: none;
-			color: $grey;
+			color: $lightgrey;
 			margin-right: 20px;
 			
 			&:hover {

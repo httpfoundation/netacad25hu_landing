@@ -86,7 +86,7 @@
 		background-color: $primary;
 		box-shadow: 0px 16px 40px rgb(249 168 112 / 40%);
 		.title, .subtitle {
-			color: $light;
+			color: $light !important;
 		}
 	}
 

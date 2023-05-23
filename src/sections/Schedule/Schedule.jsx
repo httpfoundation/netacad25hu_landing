@@ -266,7 +266,7 @@ const Schedule = (props) => {
     return (
         <Section container placeholder id="program">
             <Title>
-                Az ünnepi <span className="highlight">PROGRAM</span>
+                 <span className="highlight">Az ünnepi PROGRAM</span>
             </Title>
             <Text subtitle>
                 <StructuredText data={scheduleText}/>

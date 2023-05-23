@@ -1,7 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import './theme.scss';
 * {
-	font-family: 'Spartan', sans-serif;
+	@font-face {
+		font-family: 'Cisco Sans';
+		src: url('assets/font/CiscoSansTTLight.ttf') format('truetype');
+		font-weight: 400;
+		font-style: normal;
+	  }
+	  
+	  @font-face {
+		font-family: 'Cisco Sans';
+		src: url('assets/font/CiscoSansRegular.otf') format('opentype');
+		font-weight: 500;
+		font-style: normal;
+	  }
+	  
+	  @font-face {
+		font-family: 'Cisco Sans';
+		src: url('assets/font/CiscoSansThin.otf') format('opentype');
+		font-weight: 300;
+		font-style: normal;
+	  }
+	  
+	  @font-face {
+		font-family: 'Cisco Sans';
+		src: url('assets/font/CiscoSansTTBold.ttf') format('truetype');
+		font-weight: 600;
+		font-style: normal;
+	  }
+	
+	
+	font-family: 'Spartan', 'Cisco Sans', sans-serif;
 	z-index: 10;
 }
 

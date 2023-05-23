@@ -1,4 +1,6 @@
 import { useQuerySubscription } from "react-datocms";
+import { SiteClient } from "datocms-client"
+import { useQuery as useDatoQuery } from "graphql-hooks";
 
 export const token = "c857b0fa0e3cf583f1d8872ba86d9d"
 
@@ -78,7 +80,7 @@ export const useAllElements = (model) => {
                     }
                     break
                 }
-            }        
+            }       
         `,
     };
     const DATOCMS_QUERY = `
@@ -141,5 +143,53 @@ export const useStatQuery = (statType) => {
         token
     });
 
+    
+
     return [onsite, online, all]
 } 
+
+export const getSponsorCategories = async () => {
+    const client = SiteClient(token);
+    console.log('Downloading records...');
+    const sponsors = await client.items.all(
+        {filter: {
+            type: 'sponsor'
+        }},
+        { allPages: true }
+    )
+    const sponsorCategories = await client.items.all(
+        {filter: {
+            type: 'sponsor_category'
+        }},
+        { allPages: true }
+    )
+    const sponsorCategoriesWithSponsors = sponsorCategories.map((category) => {
+        const _sponsors = sponsors.filter(sponsor => category.sponsor.includes(sponsor.id))
+        category.sponsors = _sponsors
+        return category
+    }) 
+
+    //console.log({sponsor});
+    return sponsorCategoriesWithSponsors;
+}
+
+export const useSponsorCategories = () => {
+    const QUERY = `{    allSponsorCategories {
+        id
+        name
+        sponsor {
+          name
+          logo {
+            url
+          }
+          url
+        }
+        position
+      }}`;
+    const { loading, error, data } = useDatoQuery(QUERY, {
+        variables: {
+          limit: 10,
+        }})
+    return data ? data.allSponsorCategories : []
+}
+

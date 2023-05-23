@@ -6,7 +6,7 @@ import Location from "../../icons/Location";
 import Button from "../../components/Button/Button";
 import Section from "../../components/Section/Section";
 import WelcomeImage from "../../assets/img/welcome-img.png";
-import WelcomeImageMobile from "../../assets/img/welcome-img-mobile.png";
+import WelcomeImageMobile from "../../assets/img/welcome-img.png";
 import "./Welcome.scss";
 import Fade from "react-reveal/Fade"
 import { StructuredText  } from "react-datocms"
@@ -61,8 +61,8 @@ const Welcome = () => {
     }, [target]);
 
     return (
-        <Section container placeholder id="welcome">
-            <div className="row">
+        <Section container welcome placeholder id="welcome">
+            <div className="row" style={{position: "relative"}}>
                 <div className="col-md-7 col-12">
 {/*                     <div className="bubbles">
                         <Fade left delay={200}>
@@ -95,14 +95,14 @@ const Welcome = () => {
                     </Fade>
                     <Fade top delay={400}>
                         <>
-                            <span className="title title1">25 éves</span><br />
-                            <span className="title title2">a Cisco Hálózati Akadémia Magyarországon</span><br />
-                            <span className="title title3">2023</span><br />
+                            <div className="title title1">25 éves</div>
+                            <div className="title title2">a Cisco Hálózati Akadémia Magyarországon</div>
+                            <div className="title title3">2023</div>
                         </>
                     </Fade>
-                    <Fade top delay={440}>
+{/*                     <Fade top delay={440}>
                         <StructuredText data={welcomeText} />
-                    </Fade>
+                    </Fade> */}
                     <div className="buttons">
 						{/*<Fade top delay={480}>
                             <Button secondary bold>

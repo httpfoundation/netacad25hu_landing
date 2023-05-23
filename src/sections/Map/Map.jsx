@@ -11,7 +11,7 @@ const Map = () => {
 	const [mapText1] = useStaticElement("map1") 
 	const [mapText2] = useStaticElement("map2") 
 	return <Section id="helyszin" container placeholder>
-		<Title>Konferencia HELYSZÍN</Title>
+		<Title>Az ünnepség HELYSZÍNE</Title>
 		<Text description><StructuredText data={mapText1}></StructuredText></Text>
 		<a href="https://goo.gl/maps/ADFz3t7ywGATAbNh7" target="_blank" rel="noreferrer">
 			<img className="map" src={map} alt="Térkép" />

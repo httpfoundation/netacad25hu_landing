@@ -9,8 +9,10 @@ import ciscoLogo from "../../assets/img/sponsors/cisco2.png"
 import pannonLogo from "../../assets/img/sponsors/pannon-mik2.png"
 import eltetokLogo from "../../assets/img/sponsors/elte-tok2.png"
 import netAcadLogo from "../../assets/img/sponsors/netacad2.png"
-import { useStaticElement } from '../../tools/datoCmsTools'
+import { getSponsorCategories, useStaticElement, useSponsorCategories } from '../../tools/datoCmsTools'
 import { StructuredText  } from "react-datocms"
+import { useEffect, useState } from "react"
+import { useQuery as useDatoQuery } from "graphql-hooks";
 
 const Sponsor = (props) => {
 	return (
@@ -24,27 +26,33 @@ const Sponsor = (props) => {
 
 const Sponsors = () => {
 	const [sponsorText] = useStaticElement("sponsor") 
+	const sponsorCategories = useSponsorCategories()
+	console.log({sponsorCategories})
+
 	return <Section container placeholder id="tamogatok">
-		<Title>Az IOK 2023 <span className="highlight">TÁMOGATÓI</span></Title>
+		<Title><span className="highlight secondary">NetAcad Oktatásért-díjak</span></Title>
 		<Text subtitle>
 			<Text description><StructuredText data={sponsorText}></StructuredText></Text>
 		</Text>
-		<h3>A rendezvény fő támogatói</h3>
+		<h3>{sponsorCategories[0]?.name}</h3>
 		<div className="sponsor-grid main-sponsors">
-			<Sponsor image={microsoftLogo} link="https://microsoft.hu" />
-			<Sponsor image={telekomLogo} link="https://telekom.hu" />
+			{sponsorCategories[0]?.sponsor?.map(sponsor => <Sponsor image={sponsor.logo.url} link={sponsor.url} />)}
 		</div>
-		<h3>Együttműködő partnerek</h3>
+{/* 		<h3>Együttműködő partnerek</h3>
 		<div className="sponsor-grid partner-sponsors">
 			<Sponsor image={netAcadLogo} className="elte-tok" link="https://netacad.com/" />
 			<Sponsor image={ciscoLogo} link="http://cisco.hu" />
 			<Sponsor image={pannonLogo} link="https://mik.uni-pannon.hu/" />
 			<Sponsor image={eltetokLogo} className="elte-tok" link="https://www.tok.elte.hu/" />
-		</div>
-		<h3>Az InfoTanár Mentor Program fő támogatója</h3>
+			<Sponsor image={netAcadLogo} className="elte-tok" link="https://netacad.com/" />
+			<Sponsor image={ciscoLogo} link="http://cisco.hu" />
+			<Sponsor image={pannonLogo} link="https://mik.uni-pannon.hu/" />
+			<Sponsor image={eltetokLogo} className="elte-tok" link="https://www.tok.elte.hu/" />
+		</div> */}
+{/* 		<h3>Az InfoTanár Mentor Program fő támogatója</h3>
 		<div className="sponsor-grid itmp-sponsors">
 			<Sponsor image={alizLogo} className="" link="https://aliz.ai/" />
-		</div>		
+		</div>	 */}	
 	</Section>
 }
 

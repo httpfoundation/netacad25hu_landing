@@ -92,7 +92,7 @@ let theme = createTheme({
 	},
 	typography: {
 		//fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-		fontFamily: '"Spartan", sans-serif',
+		fontFamily: '"Cisco Sans","Spartan", sans-serif',
 		fontSize: 13.5,
 		
 		fontWeightLight: 300,

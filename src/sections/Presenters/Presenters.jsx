@@ -86,7 +86,7 @@ const Presenters = (props) => {
     return (
         <Section id="eloadok" container placeholder>
 			<Title>
-				<span className="text-uppercase">Előadóink</span>
+				<span className="text-uppercase">Akikkel együtt ünnepelhetünk </span>
 			</Title>
 			<Text subtitle>
 				<StructuredText data={presenterText} />

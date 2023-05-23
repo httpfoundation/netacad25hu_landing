@@ -14,18 +14,18 @@ const Info = () => {
 	const [infoText1] = useStaticElement("info1") 
 	const [infoText2] = useStaticElement("info2") 
 	
-	return <Section container placeholder id="info-section">
-		<Title>Ünnepeljünk <span className="highlight">EGYÜTT</span>!</Title>
-		<Text subtitle><StructuredText data={infoText1}/></Text>
+	return <Section container placeholder id="info-section" info>
+		<Title left={true}> <span className="highlight">Ünnepeljünk EGYÜTT</span>!</Title>
+		<Text><StructuredText data={infoText1}/></Text>
 
 		<div className='row'>
 				<div className='col-md-6 col-12'>
-					<div className='bubbles'>
+{/* 					<div className='bubbles'>
 						<Bubble icon color='primary' size='extra-large' title={<LightBulb />} subtitle="Inspiráció" corners={['bottom-right']} />
 						<Bubble icon color='light' size="large" title={<Networking />} subtitle="Közösségi kapcsolatok" corners={['bottom-left']} />
 						<Bubble icon color='light' size="large" title={<Star />} subtitle="Versenyképes oktatás" corners={['top-right']} />
 						<Bubble icon color='light' size="large" title={<Tools />} subtitle="Piacképes tudás" corners={['top-left']} />
-					</div>
+					</div> */}
 				</div>
 				<div className='col-md-6 col-12'>
 					<Title subtitle>25 év történelem</Title>

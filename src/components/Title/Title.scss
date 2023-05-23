@@ -6,11 +6,15 @@ h2.title {
 	line-height: 1.5;
 	text-align: center;
 	.highlight {
-		color: $lightgrey;
+		color: $secondary;
 	}
 	@include mobile {
 		font-size: 1.8rem;
 	}
+}
+
+h2.titleLeftAlign {
+	text-align: center;
 }
 
 h3.subtitle {
@@ -24,4 +28,8 @@ h3.subtitle {
 		margin-top: 0;
 		text-align: center;
 	}
+}
+
+h2.highlight {
+	color: $secondary;
 }

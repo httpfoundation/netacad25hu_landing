@@ -84,7 +84,7 @@ const Presenters = (props) => {
 
 
     return (
-        <Section id="eloadok" container placeholder>
+        <Section id="eloadok" container placeholder static>
 			<Title>
 				<span className="text-uppercase">Akikkel együtt ünnepelhetünk </span>
 			</Title>

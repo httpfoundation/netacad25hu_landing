@@ -46,6 +46,8 @@ const Registration = (props) => {
 	const [success, setSuccess] = useState(false)
 	const [error, setError] = useState(false)
 
+	const [userId, setUserId] = useState(null);
+
 	const vipCodeBase64 = (new URLSearchParams(window.location.search)).get('q') || null
 	const vipCodeArray = vipCodeBase64 ? atob(vipCodeBase64).split("#") : []
 	const vipEmail = vipCodeArray.length>0 ? vipCodeArray[0] : null
@@ -64,7 +66,7 @@ const Registration = (props) => {
 		setSuccess(false)
 		const client = new SiteClient(context.apiKey)
 		try {
-			await client.items.create({
+			const response = await client.items.create({
 				itemType: '94458',
 				name,
 				email,
@@ -86,6 +88,7 @@ const Registration = (props) => {
 			setNewsletter(false)
 			setOnsite(false)
 			setStage(null)
+			setUserId(response.id)
 			if (vipCode) window.history.replaceState({}, document.title, window.location.pathname + window.location.hash)
 		} catch (error) {
 			console.log(error)
@@ -165,16 +168,16 @@ const Registration = (props) => {
 				</>)
 				
 				}
-				<div className="form-check mb-4 mt-4">
+{/* 				<div className="form-check mb-4 mt-4">
 					<input className="form-check-input" type="checkbox" name="newsletter" id="newsletter-field" checked={newsletter} onChange={e => setNewsletter(e.target.checked)}/>
 					<label className="form-check-label" htmlFor="newsletter-field">
 						Szeretnék emailben értesülni az InfoTanár Mentor programmal kapcsolatos információkról
 					</label>
-				</div>
+				</div> */}
 				<div className="form-check mb-4 mt-4">
 					<input className="form-check-input" type="checkbox" id="toc-field" required />
 					<label className="form-check-label" htmlFor="toc-field">
-						Elolvastam és elfogadom az <a href="https://www.datocms-assets.com/94181/1676993398-adatkezelesi_tajekoztato_iok2023.pdf" target="_blank" className="link" rel="noreferrer">Adatkezelési Tájékoztató</a>ban foglaltakat.*
+						Elolvastam és elfogadom az <a href="https://www.datocms-assets.com/101437/1684764516-adatkezelesi_tajekoztato_netacad25.pdf" target="_blank" className="link" rel="noreferrer">Adatkezelési Tájékoztatóban</a> foglaltakat.*
 					</label>
 				</div>			
 				<div className="my-4"/>
@@ -214,6 +217,7 @@ const Registration = (props) => {
 			</Modal.Header>
 			<Modal.Body>
 				<StructuredText data={registrationSuccessText} />
+				<div>https://25.netacad.hu/szabaduloszoba?q={userId}</div>
 			</Modal.Body>
 			<Modal.Footer>
 			<Button variant="primary" onClick={() => setSuccess(false)}>

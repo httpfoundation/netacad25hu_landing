@@ -152,7 +152,7 @@ const Registration = (props) => {
 								{registrationFormatCheckboxText}
 							</label>
 						</div>
-						{ onsite && 
+						{ onsite && allStages?.length > 1 &&
 							<>
 								<label className="form-label  mt-4">Melyik délutáni szekción szeretnél részt venni?*</label>
 								<select className="form-select" required={onsite} value={stage} onChange={e => setStage(e.target.value)}>

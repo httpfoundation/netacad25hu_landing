@@ -32,7 +32,7 @@ const iokGrey = "#9e9e9e"
 const iokLightGrey = "#cecece"
 const iokBlueGrey = "#578392"
 
-const netacad25LightBlue = "a8e8f8" //"#00bceb"
+const netacad25LightBlue = "#a8e8f8" //"#00bceb"
 const netacad25DarkBlue = "#00bceb"
 
 const colorPrimaryBackground = netacad25LightBlue //iokBlue

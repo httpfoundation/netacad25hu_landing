@@ -8,12 +8,14 @@ import {EscapeRoomBookingPage} from "./pages/EscapeRoomBookingPage";
 import { GraphQLClient, ClientContext } from 'graphql-hooks'
 
 export const AppContext = React.createContext<undefined | { apiKey: string }>(undefined)
-const apiKey = "1a6a606f0a56bde210db59c9fbf601"
+
+//const apiKey = "1a6a606f0a56bde210db59c9fbf601"
+const apiKey = "c857b0fa0e3cf583f1d8872ba86d9d"
 
 const client = new GraphQLClient({
     url: "https://graphql.datocms.com/",
     headers: {
-      "Authorization": `c857b0fa0e3cf583f1d8872ba86d9d`,
+      "Authorization": `${apiKey}`,
     }
   });
 

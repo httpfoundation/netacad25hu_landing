@@ -27,17 +27,19 @@ const Sponsor = (props) => {
 const Sponsors = () => {
 	const [sponsorText] = useStaticElement("sponsor") 
 	const sponsorCategories = useSponsorCategories()
-	console.log({sponsorCategories})
 
 	return <Section container placeholder id="tamogatok">
 		<Title><span className="highlight secondary">NetAcad Oktatásért-díjak</span></Title>
 		<Text subtitle>
 			<Text description><StructuredText data={sponsorText}></StructuredText></Text>
 		</Text>
-		<h3>{sponsorCategories[0]?.name}</h3>
-		<div className="sponsor-grid main-sponsors">
-			{sponsorCategories[0]?.sponsor?.map(sponsor => <Sponsor image={sponsor.logo.url} link={sponsor.url} />)}
-		</div>
+		{sponsorCategories.map(category => <>
+			<h3>{category?.name}</h3>
+			<div className="sponsor-grid main-sponsors">
+				{category?.sponsor?.map(sponsor => <Sponsor image={sponsor.logo.url} link={sponsor.url} />)}
+			</div>
+		</>)}
+
 {/* 		<h3>Együttműködő partnerek</h3>
 		<div className="sponsor-grid partner-sponsors">
 			<Sponsor image={netAcadLogo} className="elte-tok" link="https://netacad.com/" />

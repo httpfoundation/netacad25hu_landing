@@ -13,6 +13,7 @@ import Modal from 'react-bootstrap/Modal'
 import Alert from "react-bootstrap/Alert"
 import Spinner from "react-bootstrap/Spinner"
 import { useStaticElement, useAllElements } from '../../tools/datoCmsTools'
+import {Link} from "react-router-dom";
 
 
 const Registration = (props) => {
@@ -38,6 +39,8 @@ const Registration = (props) => {
 	const [workplace, setWorkplace] = useState('')
 	const [phone, setPhone] = useState('')
 	const [city, setCity] = useState('')
+	const [ciscoAcademyTeacher, setCiscoAcademyTeacher] = useState(false)
+	const [ciscoAcademyTeacherYear, setCiscoAcademyTeacherYear] = useState(1998)
 	const [newsletter, setNewsletter] = useState(false)
 	const [onsite, setOnsite] = useState(false)
 	const [stage, setStage] = useState("")
@@ -74,6 +77,8 @@ const Registration = (props) => {
 				phone,
 				city,
 				newsletter,
+				ciscoAcademyTeacher,
+				ciscoAcademyTeacherYear,
 				onsite,
 				stage: stage || null,
 				vipCode: vipCode || null
@@ -88,6 +93,7 @@ const Registration = (props) => {
 			setNewsletter(false)
 			setOnsite(false)
 			setStage(null)
+			setCiscoAcademyTeacher(false)
 			setUserId(response.id)
 			if (vipCode) window.history.replaceState({}, document.title, window.location.pathname + window.location.hash)
 		} catch (error) {
@@ -145,8 +151,24 @@ const Registration = (props) => {
 				<label className="form-label" htmlFor="city-field">Település*</label>
 				<input id="city-field" className="form-control" value={city} onChange={e => setCity(e.target.value)} autoComplete="address-level2" required/>
 
+				<div className="form-check">
+					<input className="form-check-input" type="checkbox" name="online" id="onsite-field" checked={ciscoAcademyTeacher} onChange={e => setCiscoAcademyTeacher(e.target.checked)}/>
+					<label className="form-check-label" htmlFor="onsite-field">
+						Cisco akadémiai oktató vagyok
+					</label>
+				</div>
+
+				{
+					ciscoAcademyTeacher && <>
+						<label className="form-label mt-3">Melyik évben lettél Cisco akadémiai oktató?*</label>
+						<select className="form-select" required={ciscoAcademyTeacher} value={ciscoAcademyTeacherYear} onChange={e => setCiscoAcademyTeacherYear(e.target.value)}>
+							{ Array.from({length: 25}).map((_, index) => <option key={index} value={index+1998}>{index+1998}</option>) }
+						</select>
+					</>
+				}
+
 				{ registrationOnsite && (<>
-					<label className="form-label">Jelentkezés személyes részvételre</label>
+					<label className="form-label mt-4">Jelentkezés személyes részvételre</label>
 					<div className="" style={{padding: '0.8rem', border: '1px solid #ced4da', borderRadius: '0.25rem'}}>
 						<StructuredText data={vipCode ? registrationFormatVipText : registrationFormatText} />
 						<div className="form-check">
@@ -217,10 +239,14 @@ const Registration = (props) => {
 			</Modal.Header>
 			<Modal.Body>
 				<StructuredText data={registrationSuccessText} />
-				<div>https://25.netacad.hu/szabaduloszoba?q={userId}</div>
+				<Link className="escape-room-reg-button" to={`szabaduloszoba?q=${userId}`}>
+					<Button variant="primary" >
+						Szabadulószoba időpontfoglalás
+					</Button>
+				</Link>
 			</Modal.Body>
 			<Modal.Footer>
-			<Button variant="primary" onClick={() => setSuccess(false)}>
+			<Button secondary onClick={() => setSuccess(false)}>
 				Bezárás
 			</Button>
 			</Modal.Footer>

@@ -29,7 +29,7 @@ const Sponsors = () => {
 	const sponsorCategories = useSponsorCategories()
 
 	return <Section container placeholder id="tamogatok">
-		<Title><span className="highlight secondary">NETACAD Oktatásért-díjak</span></Title>
+		<Title><span className="highlight secondary">NETACAD Oktatásért díjak</span></Title>
 		<Text subtitle>
 			<Text description><StructuredText data={sponsorText}></StructuredText></Text>
 		</Text>

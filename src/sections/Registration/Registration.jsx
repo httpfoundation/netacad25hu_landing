@@ -152,16 +152,16 @@ const Registration = (props) => {
 				<input id="city-field" className="form-control" value={city} onChange={e => setCity(e.target.value)} autoComplete="address-level2" required/>
 
 				<div className="form-check">
-					<input className="form-check-input" type="checkbox" name="online" id="onsite-field" checked={ciscoAcademyTeacher} onChange={e => setCiscoAcademyTeacher(e.target.checked)}/>
-					<label className="form-check-label" htmlFor="onsite-field">
+					<input className="form-check-input" type="checkbox" name="online" id="cisco-academy-teacher" checked={ciscoAcademyTeacher} onChange={e => setCiscoAcademyTeacher(e.target.checked)}/>
+					<label className="form-check-label" htmlFor="cisco-academy-teacher">
 						Cisco akadémiai oktató vagyok
 					</label>
 				</div>
 
 				{
 					ciscoAcademyTeacher && <>
-						<label className="form-label mt-3">Melyik évben lettél Cisco akadémiai oktató?*</label>
-						<select className="form-select" required={ciscoAcademyTeacher} value={ciscoAcademyTeacherYear} onChange={e => setCiscoAcademyTeacherYear(e.target.value)}>
+						<label className="form-label mt-3" htmlFor="cisco-academy-teacher-since">Melyik évben lettél Cisco akadémiai oktató?*</label>
+						<select id="cisco-academy-teacher-since" className="form-select" required={ciscoAcademyTeacher} value={ciscoAcademyTeacherYear} onChange={e => setCiscoAcademyTeacherYear(e.target.value)}>
 							{ Array.from({length: 25}).map((_, index) => <option key={index} value={index+1998}>{index+1998}</option>) }
 						</select>
 					</>

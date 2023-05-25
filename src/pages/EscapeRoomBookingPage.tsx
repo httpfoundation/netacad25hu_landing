@@ -7,6 +7,10 @@ import {useRegId} from "../hooks/useRegId";
 import {LoadingSkeleton} from "../components/LoadingSkeleton";
 import {useBookingMutation} from "../hooks/useBookingMutation";
 import {BookingInfo} from "../components/BookingInfo";
+import { StructuredText } from "react-datocms"
+import { useStaticElement } from "../tools/datoCmsTools";
+import Title from "../components/Title/Title";
+import Text from "../components/Text/Text"
 
 export const EscapeRoomBookingPage = () => {
     console.log("EscapeRoomBookingPage")
@@ -15,6 +19,7 @@ export const EscapeRoomBookingPage = () => {
     const registration = useMe(regId);
     const updateBooking = useBookingMutation(registration?.dato_token??'');
     const [loading, setLoading] = useState(false);
+    
     
     if(!regId){
         return <h1>Az url-ben szerepelnie kell a regisztrációs tokennek</h1>
@@ -44,9 +49,10 @@ export const EscapeRoomBookingPage = () => {
     }
 
     return <div>
-        <Container maxWidth="sm" sx={{py: 6}}>
-            <Typography variant="h4" fontWeight="bold">Szabadulószoba foglalás</Typography>
-            <Typography variant="body1">Leírás a szabadulószoba foglaláshoz. Lorem impsum...</Typography>
+        <EscapeRoomInfo />
+        {/* Booking */}
+        <Container maxWidth="sm" sx={{pb: 6}}>
+            <Title>Szabadulószoba foglalás</Title>
             <Stack mt={3} gap={2}>
                 <Grid spacing={2} alignItems="center" container>
                     <Grid fontWeight="bold" item xs={3}>Dátum</Grid>
@@ -74,4 +80,14 @@ export const EscapeRoomBookingPage = () => {
         </Container>
     </div>
 
+}
+
+const EscapeRoomInfo = () => {
+    const [escapeRoomInfoText] = useStaticElement("escapeRoomInfoText", true) ;
+    return (
+           <Container sx={{pt: 6}}>
+                <Title><div className="highlight secondary">Cisco SZABADULÓSZOBA</div></Title>
+		        <Text description><StructuredText data={escapeRoomInfoText} /></Text>
+            </Container>
+    )
 }

@@ -13,6 +13,7 @@ export const useStaticElement = (staticTextField, isStructuredText = true) => {
 				${valueProperty}
 			}
 		}`;
+    
     const { error, data } = useQuerySubscription({
         enabled: true,
         query: DATOCMS_QUERY,

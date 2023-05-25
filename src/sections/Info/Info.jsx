@@ -15,7 +15,7 @@ const Info = () => {
 	const [infoText2] = useStaticElement("info2") 
 	
 	return <Section container placeholder id="info-section" info>
-		<Title left={true}> <span className="highlight">Ünnepeljünk EGYÜTT</span>!</Title>
+		<Title left={true}> <span className="highlight">Ünnepeljünk EGYÜTT!</span></Title>
 		<Text><StructuredText data={infoText1}/></Text>
 
 		<div className='row'>

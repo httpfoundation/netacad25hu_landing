@@ -60,7 +60,7 @@ const ScheduleItem = (props) => {
                     <div
                         key={presenter.id}
                         className="presenter"
-                    >{`${presenter.name}, ${presenter.title}, ${presenter.company}`}</div>
+                    >{presenter.title===":" ? `${presenter.name}: ${presenter.company}` : `${presenter.name}, ${presenter.title}, ${presenter.company}`}</div>
                 ))}
                 <div className="description">
                     {props.description}
